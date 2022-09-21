@@ -5,6 +5,7 @@ from flask import request
 import json
 
 app = Flask(__name__)
+AWS_PORT = 8080
 
 @app.route('/')
 def welcome():
@@ -24,4 +25,4 @@ def get_friends():
     return [1000, 1001, 1002, 1004, 1005]
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=AWS_PORT)
